@@ -35,7 +35,10 @@ main()
 async function main() {
     // await mongoose.connect(MONGO_URL);
     await mongoose.connect(dbUrl);
+    // await mongoose.connect('mongodb://127.0.0.1:27017/hotels');
 }
+
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -74,8 +77,6 @@ const sessionOptions = {
 //     res.send("Hi, I am root");
 // })
 
-
-
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -89,7 +90,8 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req, res, next) => {
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
-    res.locals.currUser = req.user;
+    // console.log(req.user);
+    res.locals.currUser = req.user || null;
     next();
 })
 
