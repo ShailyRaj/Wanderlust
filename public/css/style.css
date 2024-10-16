@@ -6,7 +6,7 @@ body {
     /* 100% of the viewport height  */
 }
 
-.container {
+.main-container {
     flex: 1;
     /* to grow and fill the available space within the flex container and fill the space between the header and footer  */
 }
@@ -18,10 +18,16 @@ body {
 
 .fa-compass {
     color: #fe424d;
+    margin-left: 1rem;
+    font-size: larger;
 }
 
 .nav-link {
     color: #222222 !important;
+}
+
+.container-fluid {
+    padding: 0 !important;
 }
 
 /* Footer */
@@ -122,4 +128,83 @@ body {
 #map { 
     height: 400px;
     width: 80%;
+}
+
+
+
+/* Navbar Responsive */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: #fe424d !important;
+        text-align: center;
+    }
+    .nav-link {
+        margin: 0.5rem !important;
+    }
+    .search-btn {
+        margin-right: 0.2rem !important;
+        background-color: black !important;
+        color: white !important; 
+    }
+    .search-inp {
+        margin-left: 0.2rem !important;
+    }
+}
+
+
+
+/* boilerplate */
+.main-container {
+    margin: 1rem;
+}
+
+/* icons responsive */
+@media (max-width: 1200px) {
+    .all-filters {
+        width: 100% !important;
+    }
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+}
+.all-filters {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 80%;
+}
+
+.all-filters::-webkit-scrollbar {
+    display: none;
+}
+
+/* login & signup responsive */
+@media(max-width: 635px) {
+    /* all forms -> login, signup, newlist, showlist */
+    .all-forms {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        flex-direction: column !important;
+        margin: 0 1rem !important;
+        padding: 0 !important;
+        width: 90% !important;
+    }
+    .head {
+        width: 100% !important;
+    }
+    
+}
+
+
+/* show page responsive -> individuals cards */
+@media (max-width: 730px) {
+    .show-listing {
+        width: 90% !important;
+        margin: 0 1rem !important;
+        padding: 0 !important;
+    }
+    #map {
+        width: 100% !important;
+    }
 }
